@@ -1,22 +1,21 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import styles from './styles.css'
 
-export default class ExampleComponent extends Component {
+export default class TestButton extends Component {
   static propTypes = {
-    text: PropTypes.string
+    size: PropTypes.string,
+    color: PropTypes.string
   }
 
   render() {
     const {
-      text
+      size,
+      color
     } = this.props
 
     return (
-      <div className={styles.test}>
-        Example Component: {text}
-      </div>
+      <button className={`button button-${size.toLowerCase()}`} style={{ backgroundColor: color.toLowerCase() }}>This is a {size} button.</button>
     )
   }
 }
